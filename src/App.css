@@ -21,10 +21,20 @@
   padding : 1em;
   border : 1px solid gray;
 }
+.contactId-edit-delete {
+  display : flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.contactId-edit-delete Button {
+  margin : 0.3em;
+}
+
 /*반응형 (모바일)*/
 @media (max-width : 768px) {
   .searchBox-button {
     float : left;
     margin-top : 0.5em;
+    justify-content: center;
   }
 }
