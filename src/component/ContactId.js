@@ -3,13 +3,13 @@ import {Row, Col} from "react-bootstrap"
 
 const ContactId = ({item}) => {
   return (
-    <Row>
-        <Col lg = {2}>
+    <Row className = "contactId">
+        <Col lg = {2} md = {3}>
             <img
                 width = {50}
-                src = "https://cdn-icons-png.flaticon.com/512/6522/6522516.png"/>
+                src = "https://cdn-icons-png.flaticon.com/512/8847/8847419.png"/>
         </Col>
-        <Col lg = {10}>
+        <Col lg = {10} md = {9}>
             <div>{item.name}</div>
             <div>{item.phoneNumber}</div>
         </Col>
