@@ -14,7 +14,8 @@ function reducer (state=initialState, action) {
                         name : payload.name, 
                         phoneNumber : payload.phoneNumber,
                     }
-                ]
+                ],
+                keyword:""
             };
         case "SEARCH-CONTACT":
             return {...state, keyword : payload.keyword};

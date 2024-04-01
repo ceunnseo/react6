@@ -16,7 +16,7 @@ const SearchBox = ({size}) => {
       <Row className = "searchBox">
         <Col md = {9}>
             <Form.Label>총 {size}명</Form.Label>
-            <Form.Control className = "searchBox-input" type="text" placeholder="찾고자 하는 사람의 이름을 입력해주세요" onChange = {(event)=>setKeyword(event.target.value)}/>
+            <Form.Control className = "searchBox-input" type="text" placeholder="찾고자 하는 사람의 이름을 입력해주세요" value = {keyword} onChange = {(event)=>setKeyword(event.target.value)}/>
         </Col>
         <Col md = {3}>
             <Button className = "searchBox-button" type = "submit">찾기</Button>
