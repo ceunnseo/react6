@@ -4,6 +4,9 @@ let initialState = {
 };
 function reducer (state=initialState, action) {
     const {type, payload} = action;
+    const uniqueID = () => {
+        return Math.random().toString(36).substr(2, 16);
+      }
     switch(type) {
         case "ADD-CONTACT":
             return {
@@ -11,11 +14,12 @@ function reducer (state=initialState, action) {
                 contactList:[
                     ...state.contactList, 
                     {
+                        id : uniqueID(),
                         name : payload.name, 
                         phoneNumber : payload.phoneNumber,
                     }
                 ],
-                keyword:""
+                keyword:"",
             };
         case "SEARCH-CONTACT":
             return {...state, keyword : payload.keyword};

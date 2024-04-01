@@ -16,11 +16,11 @@ const ContactList = ({}) => {
         setFilterList(contactList.filter((item)=>item.name.includes(keyword)))
       }
     }, [keyword, contactList])
-    console.log("filterList :", filterList, "keyword : ", keyword)
+    /*console.log("filterList :", filterList, "keyword : ", keyword)*/
     return (
     <div>
       <SearchBox size = {filterList.length}/>
-      {filterList.map((item) => <ContactId item={item}/>)}
+      {filterList.map((item) => <ContactId item={item} filterList={filterList} setFilterList = {setFilterList}/>)}
     </div>
   )
 }
