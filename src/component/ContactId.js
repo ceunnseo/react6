@@ -1,13 +1,14 @@
 import React from 'react'
 import {Row, Col, Button} from "react-bootstrap"
 import {useSelector} from "react-redux"
-import {useState} from "react"
+import {useDispatch} from "react-redux"
 
-const ContactId = ({item, filterList, setFilterList}) => {
+const ContactId = ({item}) => {
   console.log("contactId 컴포넌트 재실행")
-  const contactList = useSelector(state=>state.contactList)
+  const dispatch = useDispatch();
   const deleteUser = (event) => {
-    setFilterList(contactList.filter((item) => item.id !== event.target.id))
+    const id = event.target.id
+    dispatch({type : "DELETE-CONTACT", payload : {id}})
   }
   const editUser = (event) => {
     console.log("edit!", event)

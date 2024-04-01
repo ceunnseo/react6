@@ -7,6 +7,7 @@ function reducer (state=initialState, action) {
     const uniqueID = () => {
         return Math.random().toString(36).substr(2, 16);
       }
+      console.log("reducer실행",state, payload)
     switch(type) {
         case "ADD-CONTACT":
             return {
@@ -23,6 +24,11 @@ function reducer (state=initialState, action) {
             };
         case "SEARCH-CONTACT":
             return {...state, keyword : payload.keyword};
+        case "DELETE-CONTACT":
+            console.log("delete!!!!",payload.id, state.contactList)
+            return {...state, 
+                    contactList : state.contactList.filter(item => item.id !== payload.id)
+                }
         default :
             return {...state};
     }

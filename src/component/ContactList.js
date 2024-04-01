@@ -20,7 +20,7 @@ const ContactList = ({}) => {
     return (
     <div>
       <SearchBox size = {filterList.length}/>
-      {filterList.map((item) => <ContactId item={item} filterList={filterList} setFilterList = {setFilterList}/>)}
+      {filterList.map((item) => <ContactId item={item}/>)}
     </div>
   )
 }
